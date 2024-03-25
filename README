@@ -1,0 +1,208 @@
+Cioata Dragos Robert 325CC.
+
+Tema implementeaza o banda care in functie de intrarile
+pimite in fisierul de intrare va lua deciziile potrivite
+pentru modificare a acesteia. Fiecare functie este explicata
+destul de detaliat in comentariile codului. Am incercat sa 
+ofer cateva randuri de explicatii pentru fiecare pasi facuti,
+iar numele variabilelor sa fie cat mai sugestive pentru o mai
+usoara intelegere.
+
+Pe checker-ul local obtin un punctaj de 76.5p/100p iar din bonus
+15/20 folosind valgrind. Problemele petru care primesc acest
+punctaj sunt legate de tratarea cazurilor cand in fisierul out
+trebuie sau nu scris mesajul "ERROR", dar nu am reusit sa gasesc
+o rezolvare.
+
+Mai jos voi atasa comentariile din cod atribuite fiecarei functii:
+
+add_cell_stack
+
+    // aceasta functie creeaza o noua celula in stiva, dupa
+    // care ii asociem parametrul primit de functie si nodul
+    // urmator drept null, iar in final returnam un pointer
+    // la aceasta
+
+add_stack
+
+    // functia adauga un nou element in varful stivei s. initial
+    // vom aloca o celula noua careia ii atribuim valoarea info
+    // Daca alocarea a fost realizata cu succes vom adauga celula
+    // nou creata in varful stivei.
+
+pop_stack
+
+    // functia extrage elementul din varful stivei. Vom initializa
+    // variabila aux cu adresa nodului urmator, eliberam memoria
+    // nodului curent si actualizam adresa pointer ului cu adresa
+    // nodului urmator aux
+
+is_empty_stack
+
+    // functia verifica daca stiva este goala si returneaza
+    // prin intermediul operatorului ternar 1 daca este goala
+    // si 0 in caz contrar
+
+empty_stack
+
+    // goleste complet o stiva. cat timp aceasta nu este goala
+    // vom elimina element cu element.
+
+top_stack
+
+    // returneza informatii despre nodul din varful stivei.
+    // ea nu face nicio modificare asupra stivei
+
+add_cell_queue
+
+    // vom aloca initial o spatiu de memorie pentru o noua celula
+    // dupa cacre vom aloca spatiu pentru o comanda a acesteia
+    // si ii setam parametrii acesteia cu cei primiti ca argumente
+    // si returnam un pointer la noua celula de coada
+
+add_queue
+
+    // adaug un nou element la sfarsitul cozii q. Alocam initial memorie
+    // cu add_cell_queue. Daca coada nu este goala adaugam la sfarsitul
+    // cozii. Daca este goala verificam daca este vida sau nu. Daca este vida
+    // noua celula devine primul si ultimul element.
+
+init_queue
+
+    // functia creeaza o noua coada si returneazaz un pointer
+    // la aceasta dupa ce valorile first si last au fost initializate
+    // cu null indicand ca aceasta este goala
+
+first_queue
+
+    // vom returna comanda primului element din coada primit ca
+    // argument al functiei.
+
+is_empty_queue
+
+    // aceasta functie verifica daca coada primita ca argument
+    // este goala sau nu. verificam astfel daca primul si ultimul
+    // element sunt null, iar in caz afirmativ returnam true
+
+pop_queue
+
+    // prin acceast functie se elimina primul element din coada
+    // astfel, conditia if va verifica daca exista un singur
+    // element in coada, iar in acest caz se va elibera memoria,
+    // iar pointer la primul si ultimul element vor deveni nuli.
+    // in caz contrar, primul element este eliminat si vom indica
+    // catre urmatorul element retinut in variabila primul_element
+
+print_list_to_file
+
+    // aceasta fuctie scrie in fisier elementele din
+    // lista cu santinela. prin folosirea unui switch
+    // in interiorul while ului care parcurge lista
+    // vom afisa astfel pe rand toate elementele in cazul
+    // default, iar in cazul in care ne aflam la elementul
+    // curent atunci folosim afisarea "|x|"
+
+allocate_cell
+
+    // aceasta functie aloca memorie pentru o celula aux
+    // si ii atribuie parametrul primit ca parametru al
+    // functiei
+
+destroy_queue
+
+    // eliberez memoria cozii
+
+destroy_list
+
+    // functia primeste un pointer la lista si dezaloca
+    // pe rand memoria pentru toate celulele din lista
+    // in interiorul buclei, apoi elibereaza memoria
+    // pentru santinela dupa care pentru lista in sine
+
+init_list
+
+    // aceasta functie creeaza o lista vida si returneaza un pointer
+    // la structura definita drept tip al functiei. Astfel, vom
+    // initializa o celula cu santinela, o celula cu valoarea "#"
+    // si returnam pointer la aceasta lista. Santinela are valoare
+    // nedefinita. 0 mai precis in acest caz, dar este utila pentru
+    // a evita probleme lucrului cu memoria la capetele listei.
+
+move_left_char
+
+    // functia realizeaza cautarea dupa caracterul c in
+    // stanga pozitiei cursorului. astfel ne vom muta repetat
+    // la stanga in bucla, iar daca s a gasit vom returna adevarat
+    // in caz contrar la finalul functiei vom fals daca dupa intreaga
+    // cautare pana la santinela nu a fost gasit caracterul dat ca
+    // parametru. In cazul in care s a gasit primul caracter vom muta
+    // cursorul la pozitia acestuia
+
+move_right_char    
+
+    // functia aceasta efectueaza o cautare a caracterului c
+    // oferit ca parametru la dreapta de pozitia curenta.
+    // Astfel, in fiecare iteratie a buclei se verifica daca
+    // caracterul cautat nu este cel curent. Cand acesta a fost
+    // gasit vom returna adevarat si actualizam pozitia curenta
+    // a cursorului. In cazul in care s a ajuns la finalul listei
+    // si nu s a gait caracterul cautat vom insera pe ultima pozitie
+    // caracerul "#" si actulizam poziztia curenta la aceasta celula.
+
+write
+
+    // functia aceasta scrie caracterul c primit drept
+    // parametru in celula curenta. Vom verifica initial
+    // daca pe pozitia curenta se afla ceva, iar in caz
+    // afirmativ vom realiza scrierea. La final verificam
+    // daca scrierea a reusit.
+
+insert_left
+
+    // aceasta functie va insera elementul primit ca parametru
+    // in stanga valorii curente a listei. ii vom atribui celulei
+    // nou create campurile prev si next dupa care mutam pointer ul
+    // curent pentru a arata la celula nou creata
+
+insert_right
+
+    // aceasta functie va insera elementul primit ca parametru
+    // in dreapta valorii curente a listei. la fel ca in functia
+    // precedeta vom atribui campurile next si pref dupa cae
+    // mutam pointerul pentru a arata la celula nou creata.
+
+move_left
+
+    // functia move_left verifica daca nodul de inantea
+    // nodului santinela este null, iar in acest caz vom
+    // returna fals, in caz contrar mutam cusorul la stanga
+    // si returnam adevarat
+
+move_right
+
+    // aceasta functie muta cursorul la urmatoarea pozitie
+    // la dreapta daca aceaasta exista. Initial verific
+    // daca exista, iar in caz afirmativ se muta cursorul
+    // altfel vom aloca o noua celula la dreapta dupa care
+    // vom realiza mutarea.
+
+process_command
+
+    // functia primeste toti parametrii de care are nevoie pentru
+    // a verifica ce comanda primeste drept intrare in fisierul text
+    // iar in functie de aceasta decizia va alege ce operatii sa efectueze
+    // benzii. Am incercat initial sa implementez un switch cu toate comenzile
+    // dar nu am reusit sa il fac sa functioneze. L am lasat in aceasta varianta
+    // in care doar imparte dupa prima litera pentru o mai buna lizibilitate. de
+    // altfel inutila. Toate comenzile vin insotite de apelurile functiilor ce
+    // modifica lista/coada/stivele, iar cea de execute se ocupa si cu tratarea
+    // erorilor.
+
+main
+
+    // functia main se ocupa de initializaile fisierelor, stivelor,
+    // listei cu santinela, cozii si de eliberarea memoriei la final.
+    // Totodata, pentru fiecare citire din fisier vom apela funcita
+    // process_command cu parametrii potriviti unde vom verifica
+    // ce functie a fost citita si in functie de asta vom decide ce
+    // operatii sa realizam cu banda noastra.
